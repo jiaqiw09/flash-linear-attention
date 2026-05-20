@@ -10,10 +10,12 @@
 from fla.ops.backends import BackendRegistry, dispatch
 from fla.ops.common.backends.intracard import IntraCardCPBackend
 from fla.ops.common.backends.tilelang import TileLangBackend
+from fla.ops.common.backends.triton_ascend import TritonAscendBackend
 
 common_registry = BackendRegistry("common")
 
 
+common_registry.register(TritonAscendBackend())
 common_registry.register(IntraCardCPBackend())
 common_registry.register(TileLangBackend())
 
